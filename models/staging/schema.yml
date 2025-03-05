@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_postgre__orders
+    description: "Pedidos"
+    columns:
+      - name: order_id
+        description: "É o ID do Pedido"
+
+  - name: stg_postgre__shops
+    description: "Lojas"
+    columns:
+      - name: shop_id
+        description: "É o ID da Loja"
