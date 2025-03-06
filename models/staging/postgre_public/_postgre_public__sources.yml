@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: postgre_public
-    database: raw
-    schema: postgre_public
-    tables:
-      - name: lojas
-      - name: pedidos

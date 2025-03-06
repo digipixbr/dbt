@@ -9,5 +9,5 @@ select
 -- booleans
 -- dates
 -- timestamps
-from {{ source("postgre_public", "lojas") }}
+from {{ source("postgres_public", "loja") }}
 where virtual = 0

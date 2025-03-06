@@ -1,7 +1,7 @@
 with
-    orders as (select * from {{ ref("stg_postgre__orders") }}),
+    orders as (select * from {{ ref("stg_postgres__orders") }}),
 
-    shops as (select * from {{ ref("stg_postgre__shops") }}),
+    shops as (select * from {{ ref("stg_postgres__shops") }}),
 
     daily_orders as (
         select

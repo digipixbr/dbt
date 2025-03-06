@@ -13,4 +13,4 @@ select
     date(dt_liberacao) as order_date
 
 -- timestamps
-from {{ source("postgre_public", "pedidos") }}
+from {{ source("postgres_public", "pedido") }}
