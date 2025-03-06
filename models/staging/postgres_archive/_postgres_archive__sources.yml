@@ -1,9 +1,8 @@
 version: 2
 
 sources:
-  - name: postgres_public
+  - name: postgres_archive
     database: fivetran-452017
-    schema: postgres_public
+    schema: postgres_archive
     tables:
-      - name: loja
       - name: pedido
