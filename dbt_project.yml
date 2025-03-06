@@ -34,3 +34,6 @@ models:
   digipix_dbt:
     staging:
       +materialized: view
+
+vars:
+    "dbt_date:time_zone": "America/Sao_Paulo"

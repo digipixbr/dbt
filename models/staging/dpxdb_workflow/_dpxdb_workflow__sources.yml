@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: dpxdb_workflow
+    database: fivetran-452017
+    schema: dpxdb_workflow
+    tables:
+      - name: productionbatchitem_taskactual
+      - name: productionbatchitem_taskactual_resource
+      - name: productionbatchitem_taskstatus
+      - name: refacaoapprovalreason
+      - name: refacaorequest
+      - name: resourcepeople
+      - name: task
