@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dpxdb_digipix
+    database: fivetran-452017
+    schema: dpxdb_digipix
+    tables:
+      - name: salesorder
+      - name: user

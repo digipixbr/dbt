@@ -5,10 +5,16 @@ sources:
     database: fivetran-452017
     schema: dpxdb_workflow
     tables:
+      - name: part
+      - name: product
+      - name: productionbatchitem
       - name: productionbatchitem_taskactual
       - name: productionbatchitem_taskactual_resource
       - name: productionbatchitem_taskstatus
+      - name: productionorder
+      - name: productionorderitem
       - name: refacaoapprovalreason
       - name: refacaorequest
+      - name: refacaorequest_part
       - name: resourcepeople
       - name: task
