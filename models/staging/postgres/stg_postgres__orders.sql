@@ -14,6 +14,7 @@ select
 
 -- timestamps
 from {{ source("postgres_public", "pedido") }}
+where dt_liberacao is not null
 
 union all
 
@@ -33,3 +34,4 @@ select
 
 -- timestamps
 from {{ source("postgres_archive", "pedido") }}
+where dt_liberacao is not null

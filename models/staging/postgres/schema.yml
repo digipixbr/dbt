@@ -5,10 +5,20 @@ models:
     description: "Pedidos"
     columns:
       - name: order_id
-        description: "É o ID do Pedido"
+        description: "ID do Pedido"
+      - name: order_date
+        description: "Data do Pedido"
+      - name: order_value
+        description: "Valor do Pedido"
+      - name: shop_id
+        description: "ID da Loja"
+      - name: user_id
+        description: "ID do Usuário"
 
   - name: stg_postgres__shops
     description: "Lojas"
     columns:
       - name: shop_id
-        description: "É o ID da Loja"
+        description: "ID da Loja"
+      - name: shop_name
+        description: "Nome da Loja"
