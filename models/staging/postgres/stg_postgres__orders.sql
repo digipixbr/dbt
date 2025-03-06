@@ -6,7 +6,7 @@ select
 
     -- strings
     -- numerics
-    round(preco + frete - desconto - adiant_receita, 2) as order_value,
+    round(preco + frete - desconto - coalesce(adiant_receita, 0), 2) as order_value,
 
     -- booleans
     -- dates
@@ -26,7 +26,7 @@ select
 
     -- strings
     -- numerics
-    round(preco + frete - desconto - adiant_receita, 2) as order_value,
+    round(preco + frete - desconto - coalesce(adiant_receita, 0), 2) as order_value,
 
     -- booleans
     -- dates
