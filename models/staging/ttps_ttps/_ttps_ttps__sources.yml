@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: ttps_ttps
+    database: fivetran-452017
+    schema: ttps_ttps
+    tables:
+      - name: productionorderitem
