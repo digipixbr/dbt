@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'productionorderitem') }}
+    select * from {{ source('dpxdb_workflow', 'ProductionOrderItem') }}
 
 ),
 
@@ -31,9 +31,7 @@ renamed as (
         ignoretaskactivationpercent,
         imagefile,
         insertuserid,
-        applicationid,
-        _fivetran_deleted,
-        _fivetran_synced
+        applicationid
 
     from source
 

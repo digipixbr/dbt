@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'productionbatchitem_taskactual_resource') }}
+    select * from {{ source('dpxdb_workflow', 'ProductionBatchItem_TaskActual_Resource') }}
 
 ),
 
@@ -15,9 +15,7 @@ renamed as (
         totalquantity,
         updateuserid,
         insertuserid,
-        insertdate,
-        _fivetran_deleted,
-        _fivetran_synced
+        insertdate
 
     from source
 

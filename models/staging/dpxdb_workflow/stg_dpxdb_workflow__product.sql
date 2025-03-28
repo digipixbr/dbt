@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'product') }}
+    select * from {{ source('dpxdb_workflow', 'Product') }}
 
 ),
 
@@ -21,9 +21,7 @@ renamed as (
         insertuserid,
         name,
         status,
-        unitaryimposition,
-        _fivetran_deleted,
-        _fivetran_synced
+        unitaryimposition
 
     from source
 

@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: postgres_public
     database: fivetran-452017
-    schema: postgres_public
+    schema: airbyte_postgres_public
     tables:
       - name: loja
       - name: pedido

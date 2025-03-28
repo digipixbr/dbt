@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'productionbatchitem') }}
+    select * from {{ source('dpxdb_workflow', 'ProductionBatchItem') }}
 
 ),
 
@@ -22,9 +22,7 @@ renamed as (
         insertuserid,
         previousrefacaorequestproductionbatchitemstatusid,
         productionbatchitemstatusidtosend,
-        productionbatchid,
-        _fivetran_deleted,
-        _fivetran_synced
+        productionbatchid
 
     from source
 

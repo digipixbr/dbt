@@ -20,9 +20,7 @@ renamed as (
         productionorderid,
         numorderitem,
         productid,
-        productreferenceid,
-        _fivetran_deleted,
-        _fivetran_synced
+        productreferenceid
 
     from source
 

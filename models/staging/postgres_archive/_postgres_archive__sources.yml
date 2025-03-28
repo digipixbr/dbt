@@ -3,6 +3,6 @@ version: 2
 sources:
   - name: postgres_archive
     database: fivetran-452017
-    schema: postgres_archive
+    schema: airbyte_postgres_archive
     tables:
       - name: pedido

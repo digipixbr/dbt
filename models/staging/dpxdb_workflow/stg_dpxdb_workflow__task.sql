@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'task') }}
+    select * from {{ source('dpxdb_workflow', 'Task') }}
 
 ),
 
@@ -19,9 +19,7 @@ renamed as (
         name,
         description,
         team,
-        status,
-        _fivetran_deleted,
-        _fivetran_synced
+        status
 
     from source
 

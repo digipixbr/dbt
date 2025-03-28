@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'refacaorequest') }}
+    select * from {{ source('dpxdb_workflow', 'RefacaoRequest') }}
 
 ),
 
@@ -19,9 +19,7 @@ renamed as (
         refacaoapprovalreasonid,
         planned,
         approvaluserid,
-        refacaorequeststatusid,
-        _fivetran_deleted,
-        _fivetran_synced
+        refacaorequeststatusid
 
     from source
 

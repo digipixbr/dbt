@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'productionorder') }}
+    select * from {{ source('dpxdb_workflow', 'ProductionOrder') }}
 
 ),
 
@@ -34,9 +34,7 @@ renamed as (
         shippingstate,
         shippingneighborhood,
         applicationid,
-        orderdate,
-        _fivetran_deleted,
-        _fivetran_synced
+        orderdate
 
     from source
 

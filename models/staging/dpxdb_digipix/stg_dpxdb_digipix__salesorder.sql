@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_digipix', 'salesorder') }}
+    select * from {{ source('dpxdb_digipix', 'SalesOrder') }}
 
 ),
 
@@ -39,9 +39,7 @@ renamed as (
         applicationid,
         accountingadjustment,
         salescustomerid,
-        customershippingperiod,
-        _fivetran_deleted,
-        _fivetran_synced
+        customershippingperiod
 
     from source
 

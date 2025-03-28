@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'part') }}
+    select * from {{ source('dpxdb_workflow', 'Part') }}
 
 ),
 
@@ -16,9 +16,7 @@ renamed as (
         insertdate,
         name,
         status,
-        referenceproductid,
-        _fivetran_deleted,
-        _fivetran_synced
+        referenceproductid
 
     from source
 

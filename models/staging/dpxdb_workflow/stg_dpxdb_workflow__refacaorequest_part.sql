@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'refacaorequest_part') }}
+    select * from {{ source('dpxdb_workflow', 'RefacaoRequest_Part') }}
 
 ),
 
@@ -12,9 +12,7 @@ renamed as (
         partid,
         refacaorequestid,
         insertuserid,
-        insertdate,
-        _fivetran_deleted,
-        _fivetran_synced
+        insertdate
 
     from source
 

@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('dpxdb_workflow', 'refacaoapprovalreason') }}
+    select * from {{ source('dpxdb_workflow', 'RefacaoApprovalReason') }}
 
 ),
 
@@ -15,9 +15,7 @@ renamed as (
         insertuserid,
         name,
         insertdate,
-        status,
-        _fivetran_deleted,
-        _fivetran_synced
+        status
 
     from source
 
