@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: postgres_public
-    database: fivetran-452017
-    schema: airbyte_postgres_public
+    database: data-lake-455519
+    schema: raw_postgres_public
     tables:
       - name: loja
       - name: pedido
