@@ -2,6 +2,9 @@ name: 'digipix_dbt'
 version: '1.0.0'
 config-version: 2
 
+dbt-cloud:
+  project-id: 70471823442181
+
 profile: 'default'
 
 # These configurations specify where dbt should look for different types of files.
