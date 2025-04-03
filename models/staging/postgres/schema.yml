@@ -6,19 +6,35 @@ models:
     columns:
       - name: order_id
         description: "ID do Pedido"
+        tests:
+          - not_null
+          - unique
       - name: order_date
         description: "Data do Pedido"
+        tests:
+          - not_null
       - name: order_value
         description: "Valor do Pedido"
+        tests:
+          - not_null
       - name: shop_id
         description: "ID da Loja"
+        tests:
+          - not_null
       - name: user_id
         description: "ID do Usuário"
+        tests:
+          - not_null
 
   - name: stg_postgres__shops
     description: "Lojas"
     columns:
       - name: shop_id
         description: "ID da Loja"
+        tests:
+          - not_null
+          - unique
       - name: shop_name
         description: "Nome da Loja"
+        tests:
+          - not_null
