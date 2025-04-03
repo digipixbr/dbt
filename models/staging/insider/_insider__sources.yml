@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: insider
+    database: data-lake-455519
+    schema: raw_insider
+    tables:
+      - name: Email_Campaign_Analytics___Summary
+      - name: Email_Campaign_List

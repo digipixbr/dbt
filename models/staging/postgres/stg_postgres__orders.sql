@@ -10,7 +10,9 @@ select
 
     -- booleans
     -- dates
-    date(dt_liberacao) as order_date
+    date(
+        {{ dbt_date.convert_timezone("dt_liberacao", "America/Sao_Paulo", "UTC") }}
+    ) as order_date
 
 -- timestamps
 from {{ source("postgres_public", "pedido") }}
@@ -30,7 +32,9 @@ select
 
     -- booleans
     -- dates
-    date(dt_liberacao) as order_date
+    date(
+        {{ dbt_date.convert_timezone("dt_liberacao", "America/Sao_Paulo", "UTC") }}
+    ) as order_date
 
 -- timestamps
 from {{ source("postgres_archive", "pedido") }}

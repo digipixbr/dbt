@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: postgres_archive
-    database: fivetran-452017
-    schema: postgres_archive
+    database: data-lake-455519
+    schema: raw_postgres_archive
     tables:
       - name: pedido
