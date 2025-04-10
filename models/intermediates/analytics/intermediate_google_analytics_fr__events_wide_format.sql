@@ -5,7 +5,6 @@ select
     client_id,
     user_id,
     event_name,
-    continent,
     country,
     device_type,
     browser,
@@ -16,7 +15,6 @@ select
     -- -- note we append the client ID to the session ID to ensure
     -- -- that the session ID will be globally unique:
     concat(val_ga_session_id, '-', client_id) as session_id,
-    val_click_element_url as link_click_target,
     -- referrer information:
     traffic_source,
     traffic_medium,
@@ -26,7 +24,7 @@ from
     (  -- Subquery allows WHERE + PIVOT in the same expression
         select distinct  -- ensure we get just one row per event in the pivot output
             * except (param_id)
-        from {{ ref("intermediate_analytics__events_params") }}
+        from {{ ref("intermediate_google_analytics_fr__events_params") }}
     ) pivot (
         /*
         Pivoting typically requires aggregation of the returned values
@@ -38,6 +36,6 @@ from
         any_value(param_value) as val
         for param_key in (
             -- list of keys for which we want corresponding values (PICK YOUR OWN):
-            'ga_session_id', 'page_location', 'page_referrer', 'click_element_url'
+            'ga_session_id', 'page_location', 'page_referrer'
         )
     )

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  # https://support.google.com/firebase/answer/7029846?hl=en for a full description of
+  # the heavily nested GA4 BigQuery Export schema.
+  - name: stg_google_analytics_fr__events
+    description: Date-partitioned based table in which all GA4 analytics data is unified
+    columns:
+      - name: event_id
+        description: Unique Event ID generated at GTM
+      - name: event_date
+        description: Date - the partioning key for the base table
+      - name: event_timestamp
+        description: Date and time at which the event took place
+      - name: event_name
+        description:  The type of event that took place
+      - name: event_params
+        description: Structure containing event data
+      - name: user_id
+        description: The User ID
+      - name: client_id
+        description: Cookie-based identifier for an individual
+      - name: device
+        description: Structure containing device data
+      - name: geo
+        description: Structure containing user geographic data
+      - name: traffic_source
+        description: Structure { name (campaign), medium, source }. This field is only available in next-day data.
+      - name: ecommerce
+        description: Structure containing ecommerce data
+      - name: collected_traffic_source
+        description: Structure containing traffic source data

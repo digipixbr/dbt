@@ -3,7 +3,6 @@ select  -- deduplicate session-scoped data ...
     session_id,
     client_id,
     -- apply window calculations
-    last_value(continent) over (session_window) as continent,
     last_value(country) over (session_window) as country,
     last_value(device_type) over (session_window) as device_type,
     last_value(browser) over (session_window) as browser,
@@ -16,7 +15,7 @@ select  -- deduplicate session-scoped data ...
     first_value(traffic_campaign) over (session_window) as traffic_campaign,
     first_value(traffic_medium) over (session_window) as traffic_medium,
     first_value(traffic_referrer) over (session_window) as traffic_referrer,
-from {{ ref("intermediate_analytics__events_wide_format") }}
+from {{ ref("intermediate_google_analytics_fr__events_wide_format") }}
 window  --
     session_window as (
         partition by session_id

@@ -11,5 +11,4 @@ select
     ) as page_path,
     regexp_extract(page_location, r'\?([^#]*)') as query_params,
     regexp_extract(page_location, r'#(.*)') as fragment,
-    link_click_target,
-from {{ ref("intermediate_analytics__events_wide_format") }}
+from {{ ref("intermediate_google_analytics_fr__events_wide_format") }}
