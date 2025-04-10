@@ -13,7 +13,7 @@ models:
       - name: event_timestamp
         description: Date and time at which the event took place
       - name: event_name
-        description:  The type of event that took place
+        description: The type of event that took place
       - name: event_params
         description: Structure containing event data
       - name: user_id

@@ -2,6 +2,7 @@ select
     -- surrogate key (unique for each event/param pair):
     {{ dbt_utils.generate_surrogate_key(["event_id", "params.key"]) }} as param_id,
     -- event data:
+    event_id,
     event_date,
     event_timestamp,
     client_id,

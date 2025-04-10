@@ -10,10 +10,10 @@ with
             -- strings
             nome as shop_name,
 
-            -- numerics
-            -- booleans
-            -- dates
-            -- timestamps
+        -- numerics
+        -- booleans
+        -- dates
+        -- timestamps
         from source
         where virtual = 0
 
