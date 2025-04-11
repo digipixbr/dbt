@@ -9,28 +9,16 @@ select
     user_id,
     event_name,
     -- fields extracted from various struct fields:
-    geo.country as country,
-    geo.region as region,
-    geo.city as city,
+    geo.country as geo_country,
+    geo.region as geo_region,
+    geo.city as geo_city,
+
     device.category as device_type,
-    device.web_info.browser as browser,
-    device.operating_system as operating_system,
+    device.web_info.browser as device_browser,
+    device.operating_system as device_operating_system,
     device.operating_system_version as device_operating_system_version,
     device.mobile_brand_name as device_mobile_brand_name,
     device.web_info.browser_version as device_browser_version,
-
-    collected_traffic_source.manual_campaign_id
-    as collected_traffic_source_manual_campaign_id,
-    collected_traffic_source.manual_campaign_name
-    as collected_traffic_source_manual_campaign_name,
-    collected_traffic_source.manual_source as collected_traffic_source_manual_source,
-    collected_traffic_source.manual_medium as collected_traffic_source_manual_medium,
-    collected_traffic_source.manual_term as collected_traffic_source_manual_term,
-    collected_traffic_source.manual_content as collected_traffic_source_manual_content,
-    collected_traffic_source.manual_marketing_tactic
-    as collected_traffic_source_manual_marketing_tactic,
-    collected_traffic_source.gclid as collected_traffic_source_gclid,
-    collected_traffic_source.srsltid as collected_traffic_source_srsltid,
 
     traffic_source.source as traffic_source,
     traffic_source.name as traffic_campaign,
@@ -57,4 +45,3 @@ left join
     -- unwrap the event parameters: every event/parameter pair is a record
     -- (plus any events without parameters, hence LEFT JOIN)
     unnest(event_params) as params
-    

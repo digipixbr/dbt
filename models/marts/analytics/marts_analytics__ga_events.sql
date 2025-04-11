@@ -2,10 +2,10 @@ select
     event_id,
     event_date,
     event_timestamp,
+    event_name,
     client_id,
     session_id,
     user_id,
-    event_name,
     regexp_extract(
         page_location, r'(?:[a-zA-Z]+://)?(?:[a-zA-Z0-9-.]+){1}(/[^\?#;&]+)'  -- any protocol, any host, capture /path
     ) as page_path,

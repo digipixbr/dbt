@@ -3,10 +3,10 @@ select  -- deduplicate session-scoped data ...
     session_id,
     client_id,
     -- apply window calculations
-    last_value(country) over (session_window) as country,
+    last_value(geo_country) over (session_window) as geo_country,
     last_value(device_type) over (session_window) as device_type,
-    last_value(browser) over (session_window) as browser,
-    last_value(operating_system) over (session_window) as operating_system,
+    last_value(device_browser) over (session_window) as device_browser,
+    last_value(device_operating_system) over (session_window) as device_operating_system,
     first_value(event_date) over (session_window) as session_date,
     first_value(event_timestamp) over (session_window) as session_initiated,
     first_value(page_location) over (session_window) as landing_page,
