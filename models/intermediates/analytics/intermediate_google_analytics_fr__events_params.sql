@@ -6,7 +6,7 @@ select
     event_date,
     event_timestamp,
     client_id,
-    user_id,
+    SAFE_CAST(user_id as INT64) as user_id,
     event_name,
     -- fields extracted from various struct fields:
     geo.country as geo_country,
@@ -27,7 +27,7 @@ select
     ecommerce.total_item_quantity as ecommerce_total_item_quantity,
     ecommerce.purchase_revenue as ecommerce_purchase_revenue,
     ecommerce.shipping_value as ecommerce_shipping_value,
-    ecommerce.transaction_id as ecommerce_transaction_id,
+    SAFE_CAST(ecommerce.transaction_id as INT64) as ecommerce_transaction_id,
 
     -- cross-joined parameter key/value pairs:
     params.key as param_key,
