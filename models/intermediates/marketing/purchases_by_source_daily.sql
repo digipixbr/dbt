@@ -41,7 +41,7 @@ from
             -- Purchase count
             countif(event_name = 'purchase') as purchases
 
-        from {{ source("analytics_250548170", "events") }}
+        from {{ source("ga_fotoregistro", "events") }}
         where ecommerce.transaction_id is not null
         group by
             date,

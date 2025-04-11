@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: ga_fotoregistro
+    database: data-lake-455519
+    schema: analytics_250548170
+    tables:
+      - name: events
+        identifier: events_*
+        loaded_at_field: "parse_timestamp(_table_suffix, '%Y%m%d')"
