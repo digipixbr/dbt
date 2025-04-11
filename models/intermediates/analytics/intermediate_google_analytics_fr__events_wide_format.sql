@@ -2,7 +2,7 @@ select
     *,
 
     -- rename various fields output by the pivot operation below:
-    val_shipping_tier as ecommerce_shipping_tier
+    val_shipping_tier as ecommerce_shipping_tier,
     val_page_location as page_location,
     val_page_referrer as page_referrer,
     -- note we append the client ID to the session ID to ensure that the session ID
