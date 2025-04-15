@@ -18,7 +18,7 @@ models:
         description: Structure containing event data
       - name: user_id
         description: The User ID
-      - name: client_id
+      - name: user_pseudo_id
         description: Cookie-based identifier for an individual
       - name: device
         description: Structure containing device data
