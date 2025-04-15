@@ -7,8 +7,10 @@ select
     val_page_referrer as page_referrer,
     -- note we append the client ID to the session ID to ensure that the session ID
     -- will be globally unique:
-    concat(val_ga_session_id, '-', client_id) as session_id,
+    concat(val_ga_session_id, '-', user_pseudo_id) as session_id,
     regexp_extract(val_page_location, 'utm_content=([^&]+)') as traffic_referrer,
+    val_lohn_utm_source as lohn_utm_source,
+    val_source as teste_source
 
 from
     (  -- Subquery allows WHERE + PIVOT in the same expression
@@ -19,7 +21,7 @@ from
         any_value(param_value) as val
         for param_key in (
             -- list of keys for which we want corresponding values:
-            'ga_session_id', 'page_location', 'page_referrer', 'shipping_tier'
+            'ga_session_id', 'page_location', 'page_referrer', 'shipping_tier', 'lohn_utm_source', 'source'
         )
     )
 
