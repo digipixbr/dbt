@@ -3,7 +3,7 @@ select
     event_date,
     event_timestamp,
     event_name,
-    client_id,
+    user_pseudo_id,
     session_id,
     user_id,
     regexp_extract(
