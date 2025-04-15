@@ -1,7 +1,7 @@
 select  -- deduplicate session-scoped data ...
     distinct  -- window functions will produce multiple equivalent records
     session_id,
-    client_id,
+    user_pseudo_id,
     -- apply window calculations
     last_value(geo_country) over (session_window) as geo_country,
     last_value(device_type) over (session_window) as device_type,
