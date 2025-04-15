@@ -8,7 +8,7 @@ select
         ),
         null
     ) as event_id,
-    user_pseudo_id as client_id,
+    user_pseudo_id,
     user_id,
     -- strings
     event_name,
