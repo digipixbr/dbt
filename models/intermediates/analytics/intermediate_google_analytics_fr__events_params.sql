@@ -5,7 +5,7 @@ select
     event_id,
     event_date,
     event_timestamp,
-    client_id,
+    user_pseudo_id,
     SAFE_CAST(user_id as INTEGER) as user_id,
     event_name,
     -- fields extracted from various struct fields:
