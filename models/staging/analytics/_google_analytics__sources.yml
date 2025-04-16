@@ -6,5 +6,5 @@ sources:
     schema: analytics_250548170
     tables:
       - name: events
-        identifier: events_*
+        identifier: events_intraday_*
         loaded_at_field: "parse_timestamp(_table_suffix, '%Y%m%d')"
