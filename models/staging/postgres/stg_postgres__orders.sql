@@ -5,6 +5,9 @@ select
     id_usuario as user_id,
 
     -- strings
+    NULLIF(TRIM(ga_source), '') as ga_source,
+    NULLIF(TRIM(ga_medium), '') as ga_medium,
+    NULLIF(TRIM(ga_bruto), '') as ga_raw,
     -- numerics
     round(preco + frete - desconto - coalesce(adiant_receita, 0), 2) as order_value,
 
@@ -18,8 +21,8 @@ select
 from {{ source("postgres_public", "pedido") }}
 where dt_liberacao is not null
 
+/*
 union all
-
 select
     -- ids
     id_loja as shop_id,
@@ -39,3 +42,4 @@ select
 -- timestamps
 from {{ source("postgres_archive", "pedido") }}
 where dt_liberacao is not null
+*/

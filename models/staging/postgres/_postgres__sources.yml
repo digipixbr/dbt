@@ -5,11 +5,31 @@ sources:
     database: data-lake-455519
     schema: raw_postgres_archive
     tables:
-      - name: pedido
+      - name: pedido      
+      - name:  pedido_item
+      - name:  pedido_estado
+      - name:  pedido_item_fotolivro
+      - name:  pedido_estado_fotolivro
+      - name:  pedido_item_po
+      - name:  pedido_estado_po
+      - name:  pedido_item_avulso
+      - name:  pedido_estado_avulso
+      - name:  cupom_desconto
 
   - name: postgres_public
     database: data-lake-455519
     schema: raw_postgres_public
     tables:
-      - name: loja
-      - name: pedido
+      - name:  cupom_desconto
+      - name:  loja
+      - name:  pedido      
+      - name:  pedido_estado
+      - name:  pedido_estado_avulso
+      - name:  pedido_estado_fotolivro
+      - name:  pedido_estado_po
+      - name:  pedido_item
+      - name:  pedido_item_avulso
+      - name:  pedido_item_fotolivro
+      - name:  pedido_item_po
+      - name:  produto
+      - name:  tipos_estado_pedido
