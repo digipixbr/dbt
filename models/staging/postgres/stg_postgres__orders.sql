@@ -5,11 +5,15 @@ select
     id_usuario as user_id,
 
     -- strings
-    NULLIF(TRIM(ga_source), '') as ga_source,
-    NULLIF(TRIM(ga_medium), '') as ga_medium,
-    NULLIF(TRIM(ga_bruto), '') as ga_raw,
+    nullif(trim(ga_source), '') as ga_source,
+    nullif(trim(ga_medium), '') as ga_medium,
+    nullif(trim(ga_bruto), '') as ga_raw,
     -- numerics
     round(preco + frete - desconto - coalesce(adiant_receita, 0), 2) as order_value,
+    round(preco, 2) as order_items_value,
+    round(frete, 2) as order_shipping_value,
+    round(desconto, 2) as order_discount_value,
+    round(coalesce(adiant_receita, 0), 2) as order_prepayment_value,
 
     -- booleans
     -- dates
@@ -19,9 +23,10 @@ select
 
 -- timestamps
 from {{ source("postgres_public", "pedido") }}
-where dt_liberacao is not null
+where
+    dt_liberacao is not null
 
-/*
+    /*
 union all
 select
     -- ids
@@ -43,3 +48,4 @@ select
 from {{ source("postgres_archive", "pedido") }}
 where dt_liberacao is not null
 */
+    
